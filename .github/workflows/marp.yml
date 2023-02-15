@@ -1,0 +1,28 @@
+name: Export marp
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  export-marp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      
+      - name: Use node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install marp-cli
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Export slides
+        run: npx @marp-team/marp-cli@latest presentation.md -o presentation.html
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v9
+        with:
+          message: 'Export marp'
