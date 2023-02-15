@@ -16,30 +16,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  export-marp:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check out repository code
-        uses: actions/checkout@v3
-      
-      - name: Use node
-        uses: actions/setup-node@v1
-        with:
-          node-version: 18.x
-
-      - name: Install marp-cli
-        run: npm install -g @marp-team/marp-cli
-
-      - name: Export slides
-        run: npx @marp-team/marp-cli presentation.md --html -o docs/presentation.html
-
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v7
-        with:
-          author_name: nopeless's little daemon
-          author_email: 38830903+nopeless@users.noreply.github.com
-          message: 'Export marp'
-
   build:
     runs-on: ubuntu-latest
     steps:
