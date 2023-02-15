@@ -25,6 +25,6 @@ jobs:
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
         with:
-          committer_name: nopeless's little daemon
-          committer_email: 38830903+nopeless@users.noreply.github.com
+          author_name: nopeless's little daemon
+          author_email: 38830903+nopeless@users.noreply.github.com
           message: 'Export marp'
