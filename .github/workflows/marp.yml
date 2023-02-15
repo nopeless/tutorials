@@ -12,17 +12,19 @@ jobs:
         uses: actions/checkout@v3
       
       - name: Use node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v1
         with:
-          node-version: 16
+          node-version: 18.x
 
       - name: Install marp-cli
         run: npm install -g @marp-team/marp-cli
 
       - name: Export slides
-        run: npx @marp-team/marp-cli@latest presentation.md -o presentation.html
+        run: npx @marp-team/marp-cli presentation.md -o presentation.html
 
       - name: Commit changes
-        uses: EndBug/add-and-commit@v9
+        uses: EndBug/add-and-commit@v7
         with:
+          committer_name: nopeless's little daemon
+          committer_email: 38830903+nopeless@users.noreply.github.com
           message: 'Export marp'
