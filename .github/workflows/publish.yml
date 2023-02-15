@@ -31,7 +31,7 @@ jobs:
         run: npm install -g @marp-team/marp-cli
 
       - name: Export slides
-        run: npx @marp-team/marp-cli presentation.md -o docs/presentation.html
+        run: npx @marp-team/marp-cli presentation.md --html -o docs/presentation.html
 
       - name: Commit changes
         uses: EndBug/add-and-commit@v7
