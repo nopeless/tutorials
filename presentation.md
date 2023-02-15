@@ -48,7 +48,7 @@ pandoc ./my_new_file.md -o ./my_new_file.pdf
 
 > This isn't much but we can improve
 
-![1676491314651](image/presentation/hello_world_capture.png)
+![img](image/presentation/hello_world_capture.png)
 
 ---
 
