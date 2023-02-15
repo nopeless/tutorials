@@ -14,14 +14,16 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  export-marp:
+  build:
+    needs: export-marp
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository code
+      - name: Checkout
         uses: actions/checkout@v3
-      
+
+      # Marp
       - name: Use node
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 18.x
 
@@ -30,13 +32,8 @@ jobs:
 
       - name: Export slides
         run: npx @marp-team/marp-cli presentation.md --html -o docs/presentation.html
-
-  build:
-    needs: export-marp
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
+      
+      # Pages deploy
       - name: Setup Pages
         uses: actions/configure-pages@v3
       - name: copy static content for relative path resolution
