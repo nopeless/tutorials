@@ -1,27 +1,44 @@
-# Sample workflow for building and deploying a Jekyll site to GitHub Pages
-name: Deploy to GitHub pages
+name: Circular Integration
 
 on:
-  workflow_run:
-    workflows: [Export marp]
-    branches: main
-    types: [completed]
+  push:
+    branches: [main]
 
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
-# Allow one concurrent deployment
 concurrency:
   group: "pages"
   cancel-in-progress: true
 
 jobs:
-  # Build job
+  export-marp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      
+      - name: Use node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+
+      - name: Install marp-cli
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Export slides
+        run: npx @marp-team/marp-cli presentation.md -o docs/presentation.html
+
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          message: 'Export marp'
+
   build:
+    needs: export-marp
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -36,7 +53,6 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
 
-  # Deployment job
   deploy:
     environment:
       name: github-pages
