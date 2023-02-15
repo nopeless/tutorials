@@ -1,12 +1,13 @@
-name: Circular Integration
+name: Publish to pages
 
 on:
-  push:
-    branches: [main]
+  workflow_run:
+    workflows: [marp]
+    types: [completed]
 
 
 permissions:
-  contents: write
+  contents: read
   pages: write
   id-token: write
 
@@ -40,7 +41,6 @@ jobs:
           message: 'Export marp'
 
   build:
-    needs: export-marp
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
