@@ -14,6 +14,10 @@ math: mathjax
 
 Best way to write documents
 
+<footer align="right">
+<h1 style="color: white; text-shadow: none;">Created by nopeless</h1>
+</footer>
+
 ---
 
 # Why Markdown? part 1
