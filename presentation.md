@@ -16,12 +16,17 @@ Best way to write documents
 
 ---
 
-# Why Markdown?
+# Why Markdown? part 1
 
 * :feather: Increadibly small file size (150KB word document is 4KB in markdown)
 * :rocket: Insanely fast opening, saving, and closing speed. No need to wait for documents to load
 * :money_with_wings: Completely open source and free. No more Microsoft Word BS
 * :computer: Editable offline, always. Google docx more like internet docx
+
+---
+
+# Why Markdown? part 2
+
 * :spider_web: Extensible with plugins and extensions
 * 👯‍♀️ Convert and export to pdf, html, docx, and more with ease with pandoc and other tools
 * 💯 Fast styles. Changing all font sizes is 4 lines of code. No need to click through menus 🤮 
