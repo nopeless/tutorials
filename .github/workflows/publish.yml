@@ -7,7 +7,7 @@ on:
 
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -16,7 +16,25 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
+  export-marp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      
+      - name: Use node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+
+      - name: Install marp-cli
+        run: npm install -g @marp-team/marp-cli
+
+      - name: Export slides
+        run: npx @marp-team/marp-cli presentation.md --html -o docs/presentation.html
+
   build:
+    needs: export-marp
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
