@@ -63,13 +63,11 @@ pandoc ./my_new_file.md -o ./my_new_file.pdf
 * > Quotes
 * $\LaTeX$ support (most of the time)
 * [Links](), images, and gifs
-```python
-print("And code")
-```
-
-And lists, obviously...
-
-![height:200px](https://media.tenor.com/fTTVgygGDh8AAAAM/kitty-cat-sandwich.gif)
+* ```python
+  print("And code")
+  ```
+* And lists, obviously...
+* <p align="center"><img src="https://media.tenor.com/fTTVgygGDh8AAAAM/kitty-cat-sandwich.gif" height="200px"/></p>
 
 ---
 
