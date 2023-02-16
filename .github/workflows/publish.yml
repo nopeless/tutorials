@@ -15,7 +15,6 @@ concurrency:
 
 jobs:
   build:
-    needs: export-marp
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
