@@ -32,7 +32,10 @@ jobs:
       - name: Export slides
         run: |-
           # find all index.md files recursively in the current directory
-          find . -name "index.md" -type f | while read file; do
+          readarray -d '' files < <(find . -name "index.md" -type f -print0)
+
+          # loop over the files array
+          for file in "${files[@]}"; do
             # extract the directory path from the file path
             dir=$(dirname "$file")
             # generate the output filename
