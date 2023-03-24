@@ -36,12 +36,17 @@ jobs:
 
           # loop over the files array
           for file in "${files[@]}"; do
-            # extract the directory path from the file path
-            dir=$(dirname "$file")
-            # generate the output filename
-            output="${dir}/index.html"
-            # convert the file to HTML using marp-cli
-            npx @marp-team/marp-cli "$file" --html -o "$output"
+            # check if "marp: true" exists in the file
+            if grep -q "marp: true" "$file"; then
+              # extract the directory path from the file path
+              dir=$(dirname "$file")
+              # generate the output filename
+              output="${dir}/index.html"
+              # convert the file to HTML using marp-cli
+              npx @marp-team/marp-cli "$file" --html -o "$output"
+            else
+              echo "Skipping $file - marp: true not found"
+            fi
           done
       
       # Pages deploy
