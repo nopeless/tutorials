@@ -35,8 +35,7 @@ jobs:
       # Pages deploy
       - name: Setup Pages
         uses: actions/configure-pages@v3
-      - name: copy static content for relative path resolution
-        run: cp -r image docs
+
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:

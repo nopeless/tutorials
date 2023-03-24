@@ -57,7 +57,7 @@ pandoc ./my_new_file.md -o ./my_new_file.pdf
 
 > This isn't much but we can improve
 
-![img](./image/presentation/hello_world_capture.png)
+![img](./hello_world_capture.png)
 
 ---
 
@@ -244,7 +244,7 @@ Bob-->Alice: Checking with John...
 Alice->John: Yes... John, how are you?
 ```
 
-![height:350px](./image/presentation/mermaid.png)
+![height:350px](./mermaid.png)
 
 ---
 
