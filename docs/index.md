@@ -8,3 +8,5 @@
 - [Markdown](./markdown)
 
 - [Computer](./computer)
+
+- [Linux Multi-core Scheduler](./linux-multi)

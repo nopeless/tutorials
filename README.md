@@ -1,7 +1,3 @@
 # Tutorials
 
-## Includes
-
-- Markdown tutorial
-
-Open presentation in website [nopeless.github.io/markdown-tutorial](https://nopeless.github.io/tutorials/)
+Open presentation in website [nopeless.github.io/tutorials](https://nopeless.github.io/tutorials/)
