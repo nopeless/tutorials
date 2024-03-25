@@ -44,7 +44,15 @@ style: |
 ---
 # Table of contents
 
-- lmao
+- Why CPUs are So Fast
+- 
+- Why Do We Even Need Multi-Core Processing?
+
+- So Let's Fix the Problem
+
+- The Four Scheduling Bugs
+
+- Scheduling in Windows
 
 ---
 
