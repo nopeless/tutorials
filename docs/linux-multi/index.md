@@ -37,7 +37,7 @@ style: |
 
 ---
 <!-- _class: lead -->
-# A Decate of wasted cores
+# A Decade of wasted cores
 
 ## Why building a multi-core scheduler is hard
 
