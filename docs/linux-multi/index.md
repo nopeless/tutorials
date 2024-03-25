@@ -42,10 +42,11 @@ style: |
 ## Why building a multi-core scheduler is hard
 
 ---
+
 # Table of contents
 
 - Why CPUs are So Fast
-- 
+
 - Why Do We Even Need Multi-Core Processing?
 
 - So Let's Fix the Problem
@@ -53,6 +54,7 @@ style: |
 - The Four Scheduling Bugs
 
 - Scheduling in Windows
+Why Do We Even Need Multi-Core Processing?
 
 ---
 
